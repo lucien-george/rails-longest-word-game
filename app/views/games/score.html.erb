@@ -1,0 +1,22 @@
+<div class="container text-center">
+  <div class="score">
+    <h1>Score</h1>
+    <ul class="list-inline">
+      <% @letters.each do |letter| %>
+        <li class="list-inline-item">
+          <%= letter %>
+        </li>
+      <% end %>
+    </ul>
+    <ul class="list-group">
+      <li class="list-group-item">attempt: <%= @attempt %></li>
+      <li class="list-group-item">english? <%= @is_english_word %></li>
+      <li class="list-group-item">in grid? <%= @is_in_grid %></li>
+      <li class="list-group-item">message: <%= @message %></li>
+      <li class="list-group-item">this round's score: <%= @score %></li>
+      <li class="list-group-item">cumulative score: <%= session[:score] %></li>
+    </ul>
+    <%= link_to "New game", new_path %><br>
+    <%= link_to "Reset score", reset_path %>
+  </div>
+</div>
